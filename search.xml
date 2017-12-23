@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2017%2F12%2F23%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <content type="text"><![CDATA[欢迎来到 Hexo! 这是你的第一篇文章. 查看 documentation 会得到更多的信息. 如果你在使用Hexo的过程中遇到任何的问题, 你可以找到这个内容 troubleshooting or you can ask me on GitHub. 快速开始创建一个新的文章1$ hexo new "My New Post" More info: Writing 启动hexo1$ hexo server More info: Server 生成静态文件1$ hexo generate More info: Generating Deploy to remote sites1$ 发布你的博客 更多信息: Deployment]]></content>
       <categories>
         <category>你好世界</category>
       </categories>

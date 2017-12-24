@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.husen.xyz/2017/12/23/hello-world/</loc>
+    <loc>http://blog.husen.xyz/2017/12/24/Redis-keys-%E5%91%BD%E4%BB%A4/</loc>
     
-    <lastmod>2017-12-23T09:42:08.432Z</lastmod>
+    <lastmod>2017-12-24T07:46:42.244Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.husen.xyz/2017/12/24/hello-world/</loc>
+    
+    <lastmod>2017-12-24T07:37:29.038Z</lastmod>
     
   </url>
   

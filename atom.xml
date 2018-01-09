@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.husen.xyz/"/>
-  <updated>2018-01-03T14:31:06.629Z</updated>
+  <updated>2018-01-09T09:16:41.156Z</updated>
   <id>http://blog.husen.xyz/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTTP概述</title>
+    <link href="http://blog.husen.xyz/2018/01/09/HTTP%E6%A6%82%E8%BF%B0/"/>
+    <id>http://blog.husen.xyz/2018/01/09/HTTP概述/</id>
+    <published>2018-01-09T09:09:54.000Z</published>
+    <updated>2018-01-09T09:16:41.156Z</updated>
+    
+    <content type="html"><![CDATA[<p>Web浏览器、服务器和相关的Web应用程序都是通过HTTP相互通信的。HTTP是现代全球英特网中使用的公共语言。<br><a id="more"></a></p><p>1.1 HTTP使用的是可靠的数据传输协议，因此即使数据来自地球的另一端，它也能够确保数据在传输的过程中不会被损坏或产生混乱</p><p>1.2 Web内容都是存储在Web服务器上的。Web服务器所使用的是HTTP协议，因此经常会被称为HTTP服务器。这些HTTP服务器储存了因特网的数据，如果HTTP客户端发出请求的话，它们会提供数据。</p><p>1.3 Web服务器是Web资源的宿主。Web资源是Web内容的源头。资源分为静态资源和动态资源。</p><p>1.3.1 媒体类型：Web服务器会为所有HTTP对象数据附加一个MIME类型。当Web浏览器从服务器中取回一个对象的时候，会去查看相关的MIME类型，看看它是否知道应该如何处理这个对象。</p><p>MIME类型是一种文本标记，表示一种主要的对象类型和一个特定的子类型，中间由一条斜杠来分隔。</p><ul><li>HTML格式的文本文档由text/html类型来标记。</li><li>普通的ASCII文本文档由text/plain类型来标记。</li><li>JPEG版本的图片为image/jpeg类型。</li><li>GIF格式的图片为image/gif类型。</li><li>Apple的QuickTime电影为video/quicktime类型。</li><li>微软的PowerPoint演示文件为application/vnd.ms-powerpoint类型。</li></ul><p>常见的MIME类型有几百个，实验性或用途有限的MIME类型则更多。《HTTP权威指南》附录D提供了一个非常完整的MIME类型列表</p><p>1.3.2 URL：大部分URL都遵循一种标准格式，这种格式包含了三个部分，在世界范围内唯一标识并定位信息资源。</p><ul><li>URL第一部分被称为方案（scheme），说明了访问资源所使用的协议类型。这部分通常就是HTTP协议（<a href="http://）。" target="_blank" rel="noopener">http://）。</a></li><li>第二部分给出了服务器的因特网地址（比如，www.baidu.com）。</li><li>其余部分指定了Web服务器上的某个资源（比如,/imags/xxx.gif）。</li></ul><p>1.3.3 URN：URL的第二种形式就是统一资源名。URN是作为特定内容的唯一名称使用的，与目前资源所在地无关。</p><p>1.4 事务：一个HTTP事务由一条（从客户端发往服务器的）请求命令和一个（从服务器发回客户端的）响应结果组成。这种通信是通过名为HTTP报文（HTTP message）的格式化数据块进行的。</p><p>1.4.1 方法：HTTP支持几种不同的请求命令，这些命令被称为HTTP方法（HTTP method）。每条HTTP请求报文都包含一个方法。这个方法告诉服务器执行什么动作。一些常见的HTTP方法：</p><ul><li>GET 从服务器向客户端发送命名资源</li><li>PUT 将来自客户端的数据存储到一个命名的服务器资源中去</li><li>DELETE 从服务器中删除命名资源</li><li>POST 将客户端数据发送到一个服务器网关应用程序</li><li>HEAD 仅发送命名资源响应中的HTTP头部</li></ul><p>1.4.2 状态码：每条HTTP响应报文返回时都会携带一个状态码。状态码是一个三位数字的代码，告知客户端请求是否成功，或者需要采取其他动作。几种常见的状态码：</p><ul><li>200      OK，文档正确返回</li><li>302      Redirect（重定向），到其他地方去获取资源</li><li>404      Not Found（没找到），无法找到这个资源</li></ul><p>1.4.3 Web页面中可以包含多个对象：应用程序完成一项任务时通常会发布多个HTTP事务，就是当获取一个丰富的Web页面的时候。浏览器会执行一个事务来获取描述页面布局的HTML“框架”，然后发布另外的HTTP事务来获取每个嵌入式的图片、图像面板、java小程序等。这些资源甚至可能位于不同的服务器上。</p><p>1.5 后面再详讲</p><p>1.6 连接：HTTP协议使用TCP（传输控制协议）来传输其报文数据，在HTTP客户端口号在客户端和服务器之间建立一条TCP/IP连接。TCP使用IP地址和端口号来建立连接。</p><p>1.7 协议版本</p><p>1.8 Web的结构组件</p><ul><li>（1）代理：HTTP代理服务器，这是Web安全、应用集成以及性能优化的重要组成模块。位于客户端和服务器之间，接受所有客户端的HTTP请求，并将这些请求转发给服务器（可能会对请求进行修改之后转发）。对用户来说，这些应用程序就是一个代理，代表用户访问服务器。出于安全考虑，通常会将代理作为转发所有Web流量的可信用中间节点使用。代理还可以对请求和响应进行过滤。</li><li>（2）缓存：Web缓存（Web cache）或代理缓存（Proxy cache）是一种特殊的HTTP代理服务器，可以将经过代理传送的常用文档复制保存起来。下一个请求同一文档的客户端就可以享受缓存的私有副本所提供的服务了。</li><li>（3）网关：网关（gateway）是一种特殊的服务器，作为其他服务器的中间实体使用。通常用于将HTTP流量转换成其他的协议。网关接受请求时就好像自己是资源的源端服务器一样。客户端可能并不知道自己正在与一个网关进行通信。例如，一个HTTP/FTP网关会通过HTTP请求接收对FTP URI的请求，单但通过FTP协议来获取文档。</li><li>（4）隧道：隧道（tunnel）是建立起来后，就会在两条连接之间对原始数据进行盲转发的HTTP应用程序。HTTP隧道通常用来在一条或多条HTTP连接上转发非HTTP数据，转发时不会窥探数据。</li><li>（5）Agent代理：用户Agent代理是代表用户发起HTTP请求的客户端程序。所有发布Web请求的应用程序都是HTTP Agent代理。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      《HTTP权威指南》第一章HTTP概述
+    
+    </summary>
+    
+      <category term="网络协议" scheme="http://blog.husen.xyz/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
+    
+    
+      <category term="HTTP" scheme="http://blog.husen.xyz/tags/HTTP/"/>
+    
+  </entry>
   
   <entry>
     <title>RabbitMQ消息队列（一）:Detailed Introduction 详细介绍</title>

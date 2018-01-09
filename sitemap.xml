@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.husen.xyz/2018/01/09/HTTP%E6%A6%82%E8%BF%B0/</loc>
+    
+    <lastmod>2018-01-09T09:16:41.156Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.husen.xyz/2018/01/03/RabbitMQ%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%EF%BC%88%E4%B8%80%EF%BC%89-Detailed-Introduction-%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D/</loc>
     
     <lastmod>2018-01-03T14:31:06.629Z</lastmod>

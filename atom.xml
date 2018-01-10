@@ -61,28 +61,6 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://blog.husen.xyz/2017/12/24/hello-world/"/>
-    <id>http://blog.husen.xyz/2017/12/24/hello-world/</id>
-    <published>2017-12-24T07:37:29.040Z</published>
-    <updated>2017-12-24T07:37:29.038Z</updated>
-    
-    <content type="html"><![CDATA[<p>欢迎来到 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! 这是你的第一篇文章. 查看 <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> 会得到更多的信息. 如果你在使用Hexo的过程中遇到任何的问题, 你可以找到这个内容 <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br><a id="more"></a></p><h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建一个新的文章"><a href="#创建一个新的文章" class="headerlink" title="创建一个新的文章"></a>创建一个新的文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="启动hexo"><a href="#启动hexo" class="headerlink" title="启动hexo"></a>启动hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ 发布你的博客</span><br></pre></td></tr></table></figure><p>更多信息: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      这是建站的时候就有的
-    
-    </summary>
-    
-      <category term="你好世界" scheme="http://blog.husen.xyz/categories/%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C/"/>
-    
-    
-      <category term="HelloWorld" scheme="http://blog.husen.xyz/tags/HelloWorld/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Redis keys 命令</title>
     <link href="http://blog.husen.xyz/2017/12/24/Redis-keys-%E5%91%BD%E4%BB%A4/"/>
     <id>http://blog.husen.xyz/2017/12/24/Redis-keys-命令/</id>
@@ -101,32 +79,6 @@
     
     
       <category term="Redis" scheme="http://blog.husen.xyz/tags/Redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>写作</title>
-    <link href="http://blog.husen.xyz/2017/12/21/%E5%86%99%E4%BD%9C/"/>
-    <id>http://blog.husen.xyz/2017/12/21/写作/</id>
-    <published>2017-12-21T01:30:12.000Z</published>
-    <updated>2017-12-23T05:37:47.307Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="写文章" scheme="http://blog.husen.xyz/categories/%E5%86%99%E6%96%87%E7%AB%A0/"/>
-    
-    
-      <category term="linux" scheme="http://blog.husen.xyz/tags/linux/"/>
-    
-      <category term="nginx" scheme="http://blog.husen.xyz/tags/nginx/"/>
-    
-      <category term="hexo" scheme="http://blog.husen.xyz/tags/hexo/"/>
-    
-      <category term="next" scheme="http://blog.husen.xyz/tags/next/"/>
-    
-      <category term="github" scheme="http://blog.husen.xyz/tags/github/"/>
     
   </entry>
   

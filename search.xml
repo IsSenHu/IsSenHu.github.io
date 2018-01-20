@@ -1,6 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Git分布式版本控制系统的使用七：Git 标签]]></title>
+    <url>%2F2018%2F01%2F20%2FGit%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%83%EF%BC%9AGit-%E6%A0%87%E7%AD%BE%2F</url>
+    <content type="text"><![CDATA[如果你达到一个重要的阶段，并希望永远记住那个特别的提交快照，你可以使用 git tag 给它打上标签。比如说，我们想为我们的 runoob 项目发布一个”1.0”版本。 我们可以用 git tag -a v1.0 命令给最新一次提交打上（HEAD）”v1.0”的标签。-a 选项意为”创建一个带注解的标签”。 不用 -a 选项也可以执行的，但它不会记录这标签是啥时候打的，谁打的，也不会让你添加个标签的注解。 我推荐一直创建带注解的标签。 git tag -a v1.0 当你执行 git tag -a 命令时，Git 会打开你的编辑器，让你写一句标签注解，就像你给提交写注解一样。现在，注意当我们执行 git log –decorate 时，我们可以看到我们的标签了：如果我们忘了给某个提交打标签，又将它发布了，我们可以给它追加标签。例如，假设我们发布了提交 85fc7e7(上面实例最后一行)，但是那时候忘了给它打标签。 我们现在也可以：如果我们要查看所有标签可以使用以下命令： git tag指定标签信息命令：git tag -a -m “runoob.com标签” PGP签名标签命令： git tag -s -m “runoob.com标签”删除标签的命令：git tag -d 查看此版本所修改的内容:]]></content>
+      <categories>
+        <category>版本控制工具</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git分布式版本控制系统的使用六：Git 查看提交历史]]></title>
+    <url>%2F2018%2F01%2F20%2FGit%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E5%85%AD%EF%BC%9AGit-%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2%2F</url>
+    <content type="text"><![CDATA[参考菜鸟教程 http://www.runoob.com/git/git-commit-history.html 一、git log在使用 Git 提交了若干更新之后，又或者克隆了某个项目，想回顾下提交历史，我们可以使用 git log 命令查看。针对我们前一章节的操作，使用 git log 命令列出历史提交记录如下： 二、–oneline我们可以用 –oneline 选项来查看历史记录的简洁的版本。这告诉我们的是，此项目的开发历史。我们还可以用 –graph 选项，查看历史中什么时候出现了分支、合并。以下为相同的命令，开启了拓扑图选项。 三、–oneline –graph现在我们可以更清楚明了地看到何时工作分叉、又何时归并。 四、–reverse你也可以用 ‘–reverse’参数来逆向显示所有日志。 五、git log –author如果只想查找指定用户的提交日志可以使用命令：git log –author , 例如，比方说我们要找 Git 源码中 issenhu 提交的部分： 六、–since 和 –before、–until 和 –after如果你要指定日期，可以执行几个选项：–since 和 –before，但是你也可以用 –until 和 –after。例如，如果我要看 Git 项目中三周前且在四月十八日之后的所有提交，我可以执行这个（我还用了 –no-merges 选项以隐藏合并提交）：]]></content>
+      <categories>
+        <category>版本控制工具</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git分布式版本控制系统的使用五：Git 分支管理]]></title>
+    <url>%2F2018%2F01%2F20%2FGit%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BA%94%EF%BC%9AGit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86%2F</url>
+    <content type="text"><![CDATA[参考菜鸟教程 http://www.runoob.com/git/git-branch.html几乎每一种版本控制系统都以某种形式支持分支。使用分支意味着你可以从开发主线上分离开来，然后在不影响主线的同时继续工作。有人把 Git 的分支模型称为”必杀技特性”，而正是因为它，将 Git 从版本控制系统家族里区分出来。创建分支命令： git branch (branchname) 切换分支命令: git checkout (branchname) 当你切换分支的时候，Git 会用该分支的最后提交的快照替换你的工作目录的内容， 所以多个分支不需要多个目录。合并分支命令: git merge 你可以多次合并到统一分支， 也可以选择在合并之后直接删除被并入的分支。 一、列出分支列出分支基本命令： git branch 没有参数时，git branch 会列出你在本地的分支。此例的意思就是，我们有一个叫做”master”的分支，并且该分支是当前分支。当你执行 git init 的时候，缺省情况下 Git 就会为你创建”master”分支。如果我们要手动创建一个分支。执行 git branch (branchname) 即可。现在我们可以看到，有了一个新分支 mytest。当你以此方式在上次提交更新之后创建了新分支，如果后来又有更新提交， 然后又切换到了”testing”分支，Git 将还原你的工作目录到你创建分支时候的样子接下来我们将演示如何切换分支，我们用 git checkout (branch) 切换到我们要修改的分支。当我们切换到”testing”分支的时候，我们添加的新文件test.txt被移除了, 原来被删除的文件hello.jsp文件又出现了。切换回”master”分支的时候，它们有重新出现了。我们也可以使用 git checkout -b (branchname) 命令来创建新分支并立即切换到该分支下，从而在该分支中操作。如你所见，我们创建了一个分支，在该分支的上下文中移除了一些文件，然后切换回我们的主分支，那些文件又回来了。使用分支将工作切分开来，从而让我们能够在不同上下文中做事，并来回切换。 二、删除分支删除分支命令： git branch -d (branchname)例如我们要删除”newtest”分支： 三、分支合并一旦某分支有了独立内容，你终究会希望将它合并回到你的主分支。 你可以使用以下命令将任何分支合并到当前分支中去，要提交：git merge 四、合并冲突合并并不仅仅是简单的文件添加、移除的操作，Git 也会合并修改。首先，我们创建一个叫做”change_site”的分支，切换过去，我们将内容改为 www.husen.com将修改的内容提交到 “change_site” 分支中。 现在，假如切换回 “master” 分支我们可以看内容恢复到我们修改前的，我们再次修改test.txt文件。现在这些改变已经记录到我的 “master” 分支了。接下来我们将 “change_site” 分支合并过来。我们将前一个分支合并到 “master” 分支，一个合并冲突就出现了，接下来我们需要手动去修改它。在 Git 中，我们可以用 git add 要告诉 Git 文件冲突已经解决现在我们成功解决了合并中的冲突，并提交了结果。]]></content>
+      <categories>
+        <category>版本控制工具</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git分布式版本控制系统的使用四：Git 基本操作]]></title>
+    <url>%2F2018%2F01%2F20%2FGit%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9B%9B%EF%BC%9AGit-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%2F</url>
+    <content type="text"><![CDATA[参考菜鸟教程 http://www.runoob.com/git/git-basic-operations.htmlGit 的工作就是创建和保存你项目的快照及与之后的快照进行对比。本章将对有关创建与提交你的项目快照的命令作介绍。 一、获取与创建项目命令git init、git clone上篇已经讲过了 二、基本快照Git 的工作就是创建和保存你的项目的快照及与之后的快照进行对比。本章将对有关创建与提交你的项目的快照的命令作介绍。 （1）git addgit add 命令可将该文件添加到缓存，如我们添加以下两个文件。git status 命令用于查看项目的当前状态：接下来我们执行 git add 命令来添加文件：新项目中，添加所有文件很普遍，我们可以使用 git add . 命令来添加当前项目的所有文件。现在我们修改 README 文件：在README中添加”测试”，保存后执行git status -s“AM” 状态的意思是，这个文件在我们将它添加到缓存之后又有改动。改动后我们在执行 git add 命令将其添加到缓存中：当你要将你的修改包含在即将提交的快照里的时候，需要执行 git add。 （2）git statusgit status 以查看在你上次提交之后是否有修改。我演示该命令的时候加了 -s 参数，以获得简短的结果输出。如果没加该参数会详细输出内容： （3）git diff执行 git diff 来查看执行 git status 的结果的详细信息。git diff 命令显示已写入缓存与已修改但尚未写入缓存的改动的区别。git diff 有两个主要的应用场景。 尚未缓存的改动：git diff 查看已缓存的改动： git diff –cached 查看已缓存的与未缓存的所有改动：git diff HEAD 显示摘要而非整个 diff：git diff –stat 在hello.jsp中输入以下内容： %response.sendRedirect(&quot;http://www.baidu.com&quot;)% git status 显示你上次提交更新后的更改或者写入缓存的改动， 而 git diff 一行一行地显示这些改动具体是啥。接下来我们来查看下 git diff –cached 的执行效果： （4）git commit使用 git add 命令将想要快照的内容写入缓存区， 而执行 git commit 将缓存区内容添加到仓库中。Git 为你的每一个提交都记录你的名字与电子邮箱地址，所以第一步需要配置用户名和邮箱地址。这里我们在第一章的时候已经配过了接下来我们写入缓存，并提交对 hello.jsp 的所有改动。在首个例子中，我们使用 -m 选项以在命令行中提供提交注释。现在我们已经记录了快照。如果我们再执行 git status:以上输出说明我们在最近一次提交之后，没有做任何改动，是一个”working directory clean：干净的工作目录”。如果你没有设置 -m 选项，Git 会尝试为你打开一个编辑器以填写提交信息。 如果 Git 在你对它的配置中找不到相关信息，默认会打开 vim。屏幕会像这样：如果你觉得 git add 提交缓存的流程太过繁琐，Git 也允许你用 -a 选项跳过这一步。命令格式如下： git commit -a 我们先修改 hello.jsp 文件为以下内容： %response.sendRedirect(&quot;http://www.baidu.com&quot;)%%response.sendRedirect(&quot;http://www.baidu.com&quot;)% 再执行以下命令： （5）git reset HEADgit reset HEAD 命令用于取消已缓存的内容。我们先改动文件 README 文件，内容如下： #测试 #test hello.jsp 文件修改为： %response.sendRedirect(&quot;http://www.baidu.com&quot;)%%response.sendRedirect(&quot;http://www.baidu.com&quot;)%%response.sendRedirect(&quot;http://www.baidu.com&quot;)% 现在两个文件修改后，都提交到了缓存区，我们现在要取消其中一个的缓存，操作如下：现在你执行 git commit，只会将 README 文件的改动提交，而 hello.jsp 是没有的。可以看到 hello.jsp 文件的修改并未提交。这时我们可以使用以下命令将 hello.php 的修改提交：简而言之，执行 git reset HEAD 以取消之前 git add 添加，但不希望包含在下一提交快照中的缓存。 （6）git rm如果只是简单地从工作目录中手工删除文件，运行 git status 时就会在 Changes not staged for commit 的提示。要从 Git 中移除某个文件，就必须要从已跟踪文件清单中移除，然后提交。可以用以下命令完成此项工作 git rm 如果删除之前修改过并且已经放到暂存区域的话，则必须要用强制删除选项 -f git rm -f 如果把文件从暂存区域移除，但仍然希望保留在当前工作目录中，换句话说，仅是从跟踪清单中删除，使用 –cached 选项即可 git rm –cached 如我们删除 hello.jsp文件：不从工作区中删除文件：可以递归删除，即如果后面跟的是一个目录做为参数，则会递归删除整个目录中的所有子目录和文件： git rm –r * 进入某个目录中，执行此语句，会删除该目录下的所有文件和子目录。 （7）git mvgit mv 命令用于移动或重命名一个文件、目录、软连接。我们先把刚移除的 README 添加回来： git add README 然后对其重名: git mv README README.md]]></content>
+      <categories>
+        <category>版本控制工具</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git分布式版本控制系统的使用二：Git 工作流程、工作区、暂存区和版本库]]></title>
+    <url>%2F2018%2F01%2F20%2FGit%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BA%8C%EF%BC%9AGit-%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E3%80%81%E5%B7%A5%E4%BD%9C%E5%8C%BA%E3%80%81%E6%9A%82%E5%AD%98%E5%8C%BA%E5%92%8C%E7%89%88%E6%9C%AC%E5%BA%93%2F</url>
+    <content type="text"><![CDATA[一、Git 工作流程参考菜鸟教程 http://www.runoob.com/git/git-workflow.html一般的工作流程如下： 克隆 Git 资源作为工作目录。 在克隆的资源上添加或修改文件。 如果其他人修改了，你可以更新资源。 在提交前查看修改。 提交修改。 在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。 下图展示了 Git 的工作流程：二、Git 工作区、暂存区和版本库参考菜鸟教程 http://www.runoob.com/git/git-workspace-index-repo.html（1）基本概念我们先来理解下Git 工作区、暂存区和版本库概念 工作区：就是你在电脑里能看到的目录。 暂存区：英文叫stage,或index。一般存放在”.git目录下”下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。 版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。下面这个图展示了工作区、版本库中的暂存区和版本库之间的关系： 图中左侧为工作区，右侧为版本库。在版本库中标记为 “index” 的区域是暂存区（stage, index），标记为 “master” 的是 master 分支所代表的目录树。 图中我们可以看出此时 “HEAD” 实际是指向 master 分支的一个”游标”。所以图示的命令中出现 HEAD 的地方可以用 master 来替换。 图中的 objects 标识的区域为 Git 的对象库，实际位于 “.git/objects” 目录下，里面包含了创建的各种对象及内容。 当对工作区修改（或新增）的文件执行 “git add” 命令时，暂存区的目录树被更新，同时工作区修改（或新增）的文件内容被写入到对象库中的一个新的对象中，而该对象的ID被记录在暂存区的文件索引中。]]></content>
+      <categories>
+        <category>版本控制工具</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git分布式版本控制系统的使用三：Git 创建仓库]]></title>
+    <url>%2F2018%2F01%2F20%2FGit%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%89%EF%BC%9AGit-%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93%2F</url>
+    <content type="text"><![CDATA[参考菜鸟教程 http://www.runoob.com/git/git-create-repository.html 一、git initGit 使用 git init 命令来初始化一个 Git 仓库，Git 的很多命令都需要在 Git 的仓库中运行，所以 git init 是使用 Git 的第一个命令。在执行完成 git init 命令后，Git 仓库会生成一个 .git 目录，该目录包含了资源的所有元数据，其他的项目目录保持不变（不像 SVN 会在每个子目录生成 .svn 目录，Git 只在仓库的根目录生成 .git 目录）。 使用方法使用当前目录作为Git仓库，我们只需使它初始化。 在根目录下新建一个gitrepo的文件夹 进入新建的文件夹gitrepo执行git init也可以使用指定的目录作为Git仓库，使用命令：git init newrepo 初始化后，会在 gitrepo 目录下会出现一个名为 .git 的目录，所有 Git 需要的数据和资源都存放在这个目录中。如果当前目录下有几个文件想要纳入版本控制，需要先用 git add 命令告诉 Git 开始对这些文件进行跟踪，然后提交： 三、git clone我们使用 git clone 从现有 Git 仓库中拷贝项目（类似 svn checkout）。克隆仓库的命令格式为： git clone 如果我们需要克隆到指定的目录，可以使用以下命令格式： git clone 参数说明： repo:Git 仓库。directory:本地目录。 比如，要克隆 Ruby 语言的 Git 代码仓库 Grit，可以用下面的命令： git clone git://github.com/schacon/grit.git 执行该命令后，会在当前目录下创建一个名为grit的目录，其中包含一个 .git 的目录，用于保存下载下来的所有版本记录。如果要自己定义要新建的项目目录名称，可以在上面的命令末尾指定新的名字： git clone git://github.com/schacon/grit.git mygrit 几种效果等价的git clone写法： git clone http://github.com/CosmosHua/locate newgit clone http://github.com/CosmosHua/locate.git newgit clone git://github.com/CosmosHua/locate newgit clone git://github.com/CosmosHua/locate.git new]]></content>
+      <categories>
+        <category>版本控制工具</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git分布式版本控制系统的使用一：Git安装配置]]></title>
+    <url>%2F2018%2F01%2F20%2FGit%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%80%EF%BC%9AGit%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[参考菜鸟教程 http://www.runoob.com/git/git-install-setup.html Git是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。 Git 是 Linus Torvalds为了帮助管理Linux内核开发而开发的一个开放源码的版本控制软件。 Git 与常用的版本控制工具CVS,Subversion等不同，它采用了分布式版本库的方式，不必服务器端软件支持。 一、Git 与 SVN 区别GIT不仅仅是个版本控制系统，它也是个内容管理系统(CMS),工作管理系统等。如果你是一个具有使用SVN背景的人，你需要做一定的思想转换，来适应GIT提供的一些概念和特征。Git 与 SVN 区别点： 1、GIT是分布式的，SVN不是：这是GIT和其它非分布式的版本控制系统，例如SVN，CVS等，最核心的区别。 2、GIT把内容按元数据方式存储，而SVN是按文件：所有的资源控制系统都是把文件的元信息隐藏在一个类似.svn,.cvs等的文件夹里。 3、GIT 和SVN的分支不同：分支在SVN中一点不特别，就是版本库中的另外的一个目录。 4、GIT没有一个全局的版本号，而SVN有：目前为止这是跟SVN相比GIT缺少的最大的一个特征。 5、GIT的内容完整性要优于SVN：GIT的内容存储使用的是SHA-1哈希算法。这能确保代码内容的完整性，确保在遇到磁盘故障和网络问题时降低对版本库的破坏。 二、Git快速入门Git 完整命令手册地址PDF 版命令手册 三、Git安装配置1、Linux平台上安装Git 的工作需要调用 curl，zlib，openssl，expat，libiconv 等库的代码，所以需要先安装这些依赖工具。在有 yum 的系统上（比如 Fedora）或者有 apt-get 的系统上（比如 Debian 体系），可以用下面的命令安装：各 Linux 系统可以很简单多使用其安装包管理工具进行安装： （1）Debian/UbuntuDebian/Ubuntu Git的安装命令为： （2）Centos/RedHatCentos/RedHat 安装命令为： （3）Windows 平台上安装在 Windows 平台上安装 Git 同样轻松，有个叫做 msysGit 的项目提供了安装包，可以到 GitHub 的页面上下载 exe 安装文件并运行：安装包下载地址完成安装之后，就可以使用命令行的 git 工具（已经自带了 ssh 客户端）了，另外还有一个图形界面的 Git 项目管理工具。在开始菜单里找到”Git”-&gt;”Git Bash”，会弹出 Git 命令窗口，你可以在该窗口进行 Git 操作。 （4）Git配置Git 提供了一个叫做 git config 的工具，专门用来配置或读取相应的工作环境变量。这些环境变量，决定了 Git 在各个环节的具体工作方式和行为。这些变量可以存放在以下三个不同的地方： /etc/gitconfig 文件：系统中对所有用户都普遍适用的配置。若使用 git config 时用 –system 选项，读写的就是这个文件。 ~/.gitconfig 文件：用户目录下的配置文件只适用于该用户。若使用 git config 时用 –global 选项，读写的就是这个文件。 当前项目的 Git 目录中的配置文件（也就是工作目录中的 .git/config 文件）：这里的配置仅仅针对当前项目有效。每一个级别的配置都会覆盖上层的相同配置，所以 .git/config 里的配置会覆盖 /etc/gitconfig 中的同名变量。 在 Windows 系统上，Git 会找寻用户主目录下的 .gitconfig 文件。主目录即 $HOME 变量指定的目录，一般都是 C:\Documents and Settings\$USER。此外，Git 还会尝试找寻 /etc/gitconfig 文件，只不过看当初 Git 装在什么目录，就以此作为根目录来定位。 （5）用户信息配置个人的用户名称和电子邮件地址：如果用了 –global 选项，那么更改的配置文件就是位于你用户主目录下的那个，以后你所有的项目都会默认使用这里配置的用户信息。如果要在某个特定的项目中使用其他名字或者电邮，只要去掉 –global 选项重新配置即可，新的设定保存在当前项目的 .git/config 文件里。 （6）文本编辑器设置Git默认使用的文本编辑器, 一般可能会是 Vi 或者 Vim。如果你有其他偏好，比如 Emacs 的话，可以重新设置： （7）差异分析工具还有一个比较常用的是，在解决合并冲突时使用哪种差异分析工具。比如要改用 vimdiff 的话：Git 可以理解 kdiff3，tkdiff，meld，xxdiff，emerge，vimdiff，gvimdiff，ecmerge，和 opendiff 等合并工具的输出信息。当然，你也可以指定使用自己开发的工具，具体怎么做可以参阅第七章。 （8）查看配置信息要检查已有的配置信息，可以使用 git config –list 命令：有时候会看到重复的变量名，那就说明它们来自不同的配置文件（比如 /etc/gitconfig 和 ~/.gitconfig），不过最终 Git 实际采用的是最后一个。这些配置我们也可以在 ~/.gitconfig 或 /etc/gitconfig 看到，如下所示：也可以直接查阅某个环境变量的设定，只要把特定的名字跟在后面即可，像这样：]]></content>
+      <categories>
+        <category>版本控制工具</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[HTTP学习笔记二]]></title>
     <url>%2F2018%2F01%2F10%2FHTTP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C%2F</url>
     <content type="text"><![CDATA[HTTP学习笔记二 一、URL所有人都对这些名字的标准达成了一致，所以才能方便地共享这座城市的宝藏。你告诉出租车司机把你载到McAllister大街246号，他就知道你的意思了（即使他走的是一条很远的路) URL就是因特网资源的标准化名称。URL指向每一条电子信息，告诉你它们位于何处，以及如何与之进行交互。 HTTP URL的路劲组件可以分成若干路径段，每段都可以有自己的参数。比如：http://www.baidu.com;name=sss/index.html;us=22 URL结构scheme://user:password@host:port/path;params?query#frag 方案：访问服务器以获取资源的时候使用哪种协议，默认值无 用户：某些方案访问资源时需要的用户名，默认值匿名 密码：用户名后面可能要包含密码，中间用:分割，默认值E-mail地址 主机：资源宿主服务器的主机名或点分Ip地址，默认值无 端口：资源宿主服务器正在监听的端口。很多方案都有默认的端口号（HTTP是80） 路径：服务器上资源的本地名，默认值无 参数：某些方案会用这个组件来指定输入的参数。参数为键=值形式，默认值无 查询：某些方案会用这个组件传递参数以激活应用程序。用?将其与URL的其余部分分隔开来，多个用&amp;连接，形式键=值，默认值无 片段：一小片或一部分资源的名字。引用对象时不会将frag字段传送给服务器；这个字段是在客户端内部使用的。通过字符“#”将其与URL的其它部分分隔开来，默认值无 二、报文（1）请求报文格式 （2）响应报文格式（注意，只有起始行的语法有所不同） ## （3）下面对各部分的描述 方法（method）：客户端希望服务器对资源执行的动作。 请求URL（request-URL）：命名了所请求的资源，或者URL路径组件的完整URL。 版本（version）：报文所使用的HTTP版本，其格式看起来是这样：HTTP/. 其中主要版本号major和次要版本号minor都是整数。 状态码（status-code）：这三位数字描述了请求过程中所发生的情况。每个状态码的第一位数字都用于描述状态的一般列表（“成功”，“出错”等）。 原因短语（reason-phrase）：数字状态码的可读版本，包含行终止序列之前的所有文本。 首部（header）：可以有零个或多个首部，每个首部都包含一个名字，后面跟着一个冒号（:），然后是一个可选的空格，接着是一个值，最后是一个CRLF。首部是由一个空行（CRLF）结束的，表示了首部列表的结束和实体主体部分的开始。有些HTTP版本，比如HTTP/1.1要求有效请求或响应报文中必须包含特定的首部。 实体的主体部分（entity-body）：实体的主体部分包含了一个任意数据组成的数据块。并不是所有的报文都包含了实体的主体部分，有时，报文只以一个CELF结束。 三、状态码方法是用来告诉服务器做什么事情的，状态码则用来告诉客户端，发生了什么事情 1、100~199——信息状态码 2、200~299——成功状态码 3、300~399——重定向状态码重定向状态码要么告知客户端使用替代位置来访问他们所感兴趣的资源，要么就提供一个替代的响应二不是资源的内容。如果资源已被移走，可以发送一个重定向状态码和一个可选的Location首部来告知客户端资源已被移走，以及现在可以在哪里找到它（见图3-14）。 可以通过某些重定向的状态码对资源的应用程序本地副本与源端服务器上的资源进行验证。图3-15显示了一个这样的例子。 表3-8 重定向状态码与原因短语 4、400~499——客户端错误状态码有时客户端会发送一些服务器无法处理的东西，比如格式错误的请求报文，或者最常见的就是，请求一个不存在的URL。表3-9 客户端错误状态码及原因短语 5、500~599——服务器错误状态码有时客户端发送了一条有效的请求，服务器自身却出错误了。这可能是客户端碰上了服务器的缺陷，或者服务器上的子元素，比如，某个网关资源出了错。表3-10 服务器错误状态码及原因短语 当前的HTTP版本只为每类状态定义了几个代码。随着协议的发展，HTTP规范中会正式地定义更多的状态码。如果收到不认识的状态码，可能是有人将其当作当前协议的扩展定义的。可以根据其所在的范围，将它作为那个类别中的一个普通的成员来处理。 四、首部分类HTTP规范定义了几种首部字段。应用程序也可以随意的发明自己所用的首部 首部通用既可以出现在请求报文里，也可以出现在响应报文里。 请求首部提供更多有关请求的信息。 响应首部提供更多有关响应的信息。 实体首部描述主体的长度和内容，或者资源自身。 扩展首部规范中没有定义的新首部。每个HTTP首部都有一种简单的语法：名字后面跟着冒号（:），然后跟上可选的空格，再跟上字段值，最后是一个CRLF。 五、实体的主体部分HTTP报文的第三部分是可选的实体部分。实体的主体部分是HTTP报文的负荷。就是HTTP要传输的内容 HTTP报文可以承载很多类型的数字数据：图片、视频、html文档、软件应用程序、信用卡事务、电子邮件等。 六、方法1.GET GET是最常用的方法。通常用于请求服务器发送某个资源。HTTP/1.1要求服务器实现此方法。图3-7显示了一个例子。 2.HEAD HEAD方法与GET方法的行为很类似，但服务器在响应中只返回首部。不会返回实体的主体部分。使用HEAD可以： 在不获取资源的情况下了解资源的情况（比如，判断其类型）； 通过查看响应中的状态码，看看某个对象是否存在； 通过查看首部，测试资源是否被修改了。服务器开发者必须确保返回的首部与GET请求所返回的首部完全相同。遵循HTTP/1.1规范，就必须实现HEAD方法。图3-8显示了实际的HEAD方法。 3.PUT与GET从服务器读取文档相反，PUT方法会向服务器写入文档。有些发布系统允许用户创建Web页面，并用PUT直接将其安装到Web服务器上去（参加图3-9）。 4.POSTPOST方法起初是用来向服务器输入数据的。实际上，通常会用它来支持HTML的表单。表单中填好的数据通常会被发送给服务器，然后由服务器将其发送到它要去的地方（比如，送到一个服务器网关程序中，然后由这个程序对其进行处理）。图3-10显示了一个用POST方法发起HTTP请求————向服务器发送表单数据————客户端 5.TRACE客户端发起请求时，这个请求可能要穿过防火墙、代理、网关或其他一些应用程序。每个中间节点都可能会修改原始的HTTP请求。TRACE方法允许客户端在最终将请求发送给服务器时，看看它变成了什么样子。 TRACE请求会在目的服务器端发起一个“环回”诊断。行程最后一站的服务器会弹回一条TRACE响应，并在响应主体中携带它收到的原始请求报文。这样客户端就可以查看在所有中间HTTP应用程序组成的请求/响应链上，原始报文是否，以及如何被毁坏或修改过（参见原图3-11）。TRACE并不提供区分方法的机制，通常，应用程序会自行决定对TRACE请求的处理方法。TRACE请求中不能带有实体的主体部分。TRACE响应的实体部分包含了响应服务器收到的请求的精确副本。 6.OPTIONSOPTIONS方法请求Web服务器告知其支持的各种功能。可以询问服务器通常支持哪些方法，或者对某些特殊的资源支持哪些方法。这为客户端提供了一种手段，使其不用实际访问那些资源就能判定访问各种资源的最优方式。图3-12显示了一个使用OPTIONS方法的请求。 7.DELETE顾名思义，DELETE方法所做的事情就是请求服务器删除请求URL所制定的资源。但是，客户端应用程序无法保证删除操作一定会被执行。因为HTTP规范允许服务器在不通知客户端的情况下撤销请求。图3-13显示了一个DELETE方法的实例。 8.扩展方法]]></content>

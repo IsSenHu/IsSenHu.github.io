@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Git," />
 
 
 
@@ -81,16 +81,32 @@
 
 
 
-<meta name="description" content="在昏暗的暮色中 两人的身影逐渐淡漠 尽管如此 ——但是我们已回不到从前">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Husen&#39;Blog">
-<meta property="og:url" content="http://blog.husen.xyz/archives/2018/01/index.html">
+<meta name="description" content="参考菜鸟教程  http://www.runoob.com/git/git-branch.html几乎每一种版本控制系统都以某种形式支持分支。使用分支意味着你可以从开发主线上分离开来，然后在不影响主线的同时继续工作。有人把 Git 的分支模型称为”必杀技特性”，而正是因为它，将 Git 从版本控制系统家族里区分出来。">
+<meta name="keywords" content="Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git分布式版本控制系统的使用五：Git 分支管理">
+<meta property="og:url" content="http://blog.husen.xyz/2018/01/20/Git分布式版本控制系统的使用五：Git-分支管理/index.html">
 <meta property="og:site_name" content="Husen&#39;Blog">
-<meta property="og:description" content="在昏暗的暮色中 两人的身影逐渐淡漠 尽管如此 ——但是我们已回不到从前">
+<meta property="og:description" content="参考菜鸟教程  http://www.runoob.com/git/git-branch.html几乎每一种版本控制系统都以某种形式支持分支。使用分支意味着你可以从开发主线上分离开来，然后在不影响主线的同时继续工作。有人把 Git 的分支模型称为”必杀技特性”，而正是因为它，将 Git 从版本控制系统家族里区分出来。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9692973-a6692e630438afdc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9692973-b3de9c1c083aa960.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9692973-f5fe0b9433f1e13b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://blog.husen.xyz/2018/01/20/Git分布式版本控制系统的使用五：Git-分支管理/当我们切换到%22testing%22分支的时候，我们添加的新文件test.txt被移除了,%20原来被删除的文件hello.php文件又出现了。切换回%22master%22分支的时候，它们有重新出现了。">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9692973-ee8f2dd04d5e208e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9692973-6bf6a4f5ac030c9c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9692973-afd63c89afecaa70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9692973-9888ddd72d45d4d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9692973-32762bc5e5cadb58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9692973-5308c2816fa9ce01.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9692973-d54cd701d33f12c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9692973-a746ba03f3159e13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9692973-6346444026bd1515.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-01-20T09:52:08.439Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Husen&#39;Blog">
-<meta name="twitter:description" content="在昏暗的暮色中 两人的身影逐渐淡漠 尽管如此 ——但是我们已回不到从前">
+<meta name="twitter:title" content="Git分布式版本控制系统的使用五：Git 分支管理">
+<meta name="twitter:description" content="参考菜鸟教程  http://www.runoob.com/git/git-branch.html几乎每一种版本控制系统都以某种形式支持分支。使用分支意味着你可以从开发主线上分离开来，然后在不影响主线的同时继续工作。有人把 Git 的分支模型称为”必杀技特性”，而正是因为它，将 Git 从版本控制系统家族里区分出来。">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/9692973-a6692e630438afdc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -120,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.husen.xyz/archives/2018/01/"/>
+  <link rel="canonical" href="http://blog.husen.xyz/2018/01/20/Git分布式版本控制系统的使用五：Git-分支管理/"/>
 
 
 
 
 
-  <title>归档 | Husen'Blog</title>
+  <title>Git分布式版本控制系统的使用五：Git 分支管理 | Husen'Blog</title>
   
 
 
@@ -158,7 +174,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	<a href="https://github.com/issenhu" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#FD6C6C; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -306,407 +322,258 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.husen.xyz/2018/01/20/Git分布式版本控制系统的使用五：Git-分支管理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="可爱的小森森^_^">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/blog_head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Husen'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">Git分布式版本控制系统的使用五：Git 分支管理</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-20T17:50:59+08:00">
+                2018-01-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 11 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/版本控制工具/" itemprop="url" rel="index">
+                    <span itemprop="name">版本控制工具</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
+             <span id="/2018/01/20/Git分布式版本控制系统的使用五：Git-分支管理/" class="leancloud_visitors" data-flag-title="Git分布式版本控制系统的使用五：Git 分支管理">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/20/Git分布式版本控制系统的使用七：Git-标签/" itemprop="url">
-              
-                <span itemprop="name">Git分布式版本控制系统的使用七：Git 标签</span>
-              
-            </a>
-        
-      </h2>
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-20T17:53:34+08:00"
-              content="2018-01-20" >
-          01-20
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/20/Git分布式版本控制系统的使用六：Git-查看提交历史/" itemprop="url">
-              
-                <span itemprop="name">Git分布式版本控制系统的使用六：Git 查看提交历史</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-20T17:52:30+08:00"
-              content="2018-01-20" >
-          01-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/20/Git分布式版本控制系统的使用五：Git-分支管理/" itemprop="url">
-              
-                <span itemprop="name">Git分布式版本控制系统的使用五：Git 分支管理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-20T17:50:59+08:00"
-              content="2018-01-20" >
-          01-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/20/Git分布式版本控制系统的使用四：Git-基本操作/" itemprop="url">
-              
-                <span itemprop="name">Git分布式版本控制系统的使用四：Git 基本操作</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-20T17:49:12+08:00"
-              content="2018-01-20" >
-          01-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>参考菜鸟教程  <a href="http://www.runoob.com/git/git-branch.html" target="_blank" rel="noopener">http://www.runoob.com/git/git-branch.html</a><br>几乎每一种版本控制系统都以某种形式支持分支。使用分支意味着你可以从开发主线上分离开来，然后在不影响主线的同时继续工作。<br>有人把 Git 的分支模型称为”必杀技特性”，而正是因为它，将 Git 从版本控制系统家族里区分出来。<br><a id="more"></a><br>创建分支命令：  </p>
+<blockquote>
+<p>git branch (branchname)  </p>
+</blockquote>
+<p>切换分支命令:  </p>
+<blockquote>
+<p>git checkout (branchname)  </p>
+</blockquote>
+<p>当你切换分支的时候，Git 会用该分支的最后提交的快照替换你的工作目录的内容， 所以多个分支不需要多个目录。<br>合并分支命令:  </p>
+<blockquote>
+<p>git merge   </p>
+</blockquote>
+<p>你可以多次合并到统一分支， 也可以选择在合并之后直接删除被并入的分支。  </p>
+<h3 id="一、列出分支"><a href="#一、列出分支" class="headerlink" title="一、列出分支"></a>一、列出分支</h3><p>列出分支基本命令：  </p>
+<blockquote>
+<p>git branch  </p>
+</blockquote>
+<p>没有参数时，git branch 会列出你在本地的分支。<br><img src="http://upload-images.jianshu.io/upload_images/9692973-a6692e630438afdc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>此例的意思就是，我们有一个叫做”master”的分支，并且该分支是当前分支。<br>当你执行 git init 的时候，缺省情况下 Git 就会为你创建”master”分支。<br>如果我们要手动创建一个分支。执行 <strong>git branch (branchname)</strong> 即可。<br><img src="http://upload-images.jianshu.io/upload_images/9692973-b3de9c1c083aa960.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>现在我们可以看到，有了一个新分支 mytest。<br>当你以此方式在上次提交更新之后创建了新分支，如果后来又有更新提交， 然后又切换到了”testing”分支，Git 将还原你的工作目录到你创建分支时候的样子<br>接下来我们将演示如何切换分支，我们用 <strong>git checkout (branch)</strong> 切换到我们要修改的分支。<br><img src="http://upload-images.jianshu.io/upload_images/9692973-f5fe0b9433f1e13b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>当我们切换到”testing”分支的时候，我们添加的新文件test.txt被移除了, 原来被删除的文件hello.jsp文件又出现了。切换回”master”分支的时候，它们有重新出现了。<br><img src="当我们切换到&quot;testing&quot;分支的时候，我们添加的新文件test.txt被移除了, 原来被删除的文件hello.php文件又出现了。切换回&quot;master&quot;分支的时候，它们有重新出现了。" alt="image"><br>我们也可以使用 <strong>git checkout -b (branchname)</strong> 命令来创建新分支并立即切换到该分支下，从而在该分支中操作。<br><img src="http://upload-images.jianshu.io/upload_images/9692973-ee8f2dd04d5e208e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>如你所见，我们创建了一个分支，在该分支的上下文中移除了一些文件，然后切换回我们的主分支，那些文件又回来了。<br>使用分支将工作切分开来，从而让我们能够在不同上下文中做事，并来回切换。  </p>
+<h3 id="二、删除分支"><a href="#二、删除分支" class="headerlink" title="二、删除分支"></a>二、删除分支</h3><p>删除分支命令：  </p>
+<blockquote>
+<p>git branch -d (branchname)<br>例如我们要删除”newtest”分支：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-6bf6a4f5ac030c9c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image">  </p>
+<h3 id="三、分支合并"><a href="#三、分支合并" class="headerlink" title="三、分支合并"></a>三、分支合并</h3><p>一旦某分支有了独立内容，你终究会希望将它合并回到你的主分支。 你可以使用以下命令将任何分支合并到当前分支中去，要提交：<br>git merge  </p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/9692973-afd63c89afecaa70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image">  </p>
+<h3 id="四、合并冲突"><a href="#四、合并冲突" class="headerlink" title="四、合并冲突"></a>四、合并冲突</h3><p>合并并不仅仅是简单的文件添加、移除的操作，Git 也会合并修改。<br><img src="http://upload-images.jianshu.io/upload_images/9692973-9888ddd72d45d4d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>首先，我们创建一个叫做”change_site”的分支，切换过去，我们将内容改为 www.husen.com<br><img src="http://upload-images.jianshu.io/upload_images/9692973-32762bc5e5cadb58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>将修改的内容提交到 “change_site” 分支中。 现在，假如切换回 “master” 分支我们可以看内容恢复到我们修改前的，我们再次修改test.txt文件。<br><img src="http://upload-images.jianshu.io/upload_images/9692973-5308c2816fa9ce01.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>现在这些改变已经记录到我的 “master” 分支了。接下来我们将 “change_site” 分支合并过来。<br><img src="http://upload-images.jianshu.io/upload_images/9692973-d54cd701d33f12c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>我们将前一个分支合并到 “master” 分支，一个合并冲突就出现了，接下来我们需要手动去修改它。<br><img src="http://upload-images.jianshu.io/upload_images/9692973-a746ba03f3159e13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>在 Git 中，我们可以用 git add 要告诉 Git 文件冲突已经解决<br><img src="http://upload-images.jianshu.io/upload_images/9692973-6346444026bd1515.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>现在我们成功解决了合并中的冲突，并提交了结果。</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/20/Git分布式版本控制系统的使用二：Git-工作流程、工作区、暂存区和版本库/" itemprop="url">
-              
-                <span itemprop="name">Git分布式版本控制系统的使用二：Git 工作流程、工作区、暂存区和版本库</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-20T17:42:23+08:00"
-              content="2018-01-20" >
-          01-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/20/Git分布式版本控制系统的使用三：Git-创建仓库/" itemprop="url">
-              
-                <span itemprop="name">Git分布式版本控制系统的使用三：Git 创建仓库</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-20T17:41:31+08:00"
-              content="2018-01-20" >
-          01-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/20/Git分布式版本控制系统的使用一：Git安装配置/" itemprop="url">
-              
-                <span itemprop="name">Git分布式版本控制系统的使用一：Git安装配置</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-20T17:35:12+08:00"
-              content="2018-01-20" >
-          01-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/10/HTTP学习笔记二/" itemprop="url">
-              
-                <span itemprop="name">HTTP学习笔记二</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-10T17:29:49+08:00"
-              content="2018-01-10" >
-          01-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/09/HTTP概述/" itemprop="url">
-              
-                <span itemprop="name">HTTP概述</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-09T17:09:54+08:00"
-              content="2018-01-09" >
-          01-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/03/RabbitMQ消息队列（一）-Detailed-Introduction-详细介绍/" itemprop="url">
-              
-                <span itemprop="name">RabbitMQ消息队列（一）:Detailed Introduction 详细介绍</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-03T22:15:57+08:00"
-              content="2018-01-03" >
-          01-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------本文结束<i class="fa fa-paw"></i>感谢阅读------</div>
+    
+</div>
+
+      
+    </div>		 
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>我知道你们是不会鼓励我的，但是心中总有个大胆的想法！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/weixin.JPG" alt="可爱的小森森^_^ 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/zhifubao.JPG" alt="可爱的小森森^_^ 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Git/" rel="tag"># Git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/20/Git分布式版本控制系统的使用四：Git-基本操作/" rel="next" title="Git分布式版本控制系统的使用四：Git 基本操作">
+                <i class="fa fa-chevron-left"></i> Git分布式版本控制系统的使用四：Git 基本操作
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/20/Git分布式版本控制系统的使用六：Git-查看提交历史/" rel="prev" title="Git分布式版本控制系统的使用六：Git 查看提交历史">
+                Git分布式版本控制系统的使用六：Git 查看提交历史 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -714,6 +581,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -734,8 +605,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -868,6 +748,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、列出分支"><span class="nav-number">1.</span> <span class="nav-text">一、列出分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、删除分支"><span class="nav-number">2.</span> <span class="nav-text">二、删除分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、分支合并"><span class="nav-number">3.</span> <span class="nav-text">三、分支合并</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、合并冲突"><span class="nav-number">4.</span> <span class="nav-text">四、合并冲突</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1037,6 +933,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 

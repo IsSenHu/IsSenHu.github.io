@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.husen.xyz/"/>
-  <updated>2018-01-10T09:50:00.349Z</updated>
+  <updated>2018-01-20T09:54:45.124Z</updated>
   <id>http://blog.husen.xyz/</id>
   
   <author>
@@ -15,6 +15,168 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git分布式版本控制系统的使用七：Git 标签</title>
+    <link href="http://blog.husen.xyz/2018/01/20/Git%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%83%EF%BC%9AGit-%E6%A0%87%E7%AD%BE/"/>
+    <id>http://blog.husen.xyz/2018/01/20/Git分布式版本控制系统的使用七：Git-标签/</id>
+    <published>2018-01-20T09:53:34.000Z</published>
+    <updated>2018-01-20T09:54:45.124Z</updated>
+    
+    <content type="html"><![CDATA[<p>如果你达到一个重要的阶段，并希望永远记住那个特别的提交快照，你可以使用 git tag 给它打上标签。<br><a id="more"></a><br>比如说，我们想为我们的 runoob 项目发布一个”1.0”版本。 我们可以用 git tag -a v1.0 命令给最新一次提交打上（HEAD）”v1.0”的标签。<br>-a 选项意为”创建一个带注解的标签”。 不用 -a 选项也可以执行的，但它不会记录这标签是啥时候打的，谁打的，也不会让你添加个标签的注解。 我推荐一直创建带注解的标签。  </p><blockquote><p>git tag -a v1.0   </p></blockquote><p>当你执行 git tag -a 命令时，Git 会打开你的编辑器，让你写一句标签注解，就像你给提交写注解一样。<br>现在，注意当我们执行 git log –decorate 时，我们可以看到我们的标签了：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-22a5e571257ee2f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>如果我们忘了给某个提交打标签，又将它发布了，我们可以给它追加标签。<br>例如，假设我们发布了提交 85fc7e7(上面实例最后一行)，但是那时候忘了给它打标签。 我们现在也可以：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-b866897262a47d00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>如果我们要查看所有标签可以使用以下命令：  </p><blockquote><p>git tag<br><img src="http://upload-images.jianshu.io/upload_images/9692973-b87cddc220849b5d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>指定标签信息命令：<br>git tag -a <tagname> -m “runoob.com标签”  </tagname></p></blockquote><p>PGP签名标签命令：  </p><blockquote><p>git tag -s <tagname> -m “runoob.com标签”<br>删除标签的命令：<br>git tag -d  </tagname></p></blockquote><p>查看此版本所修改的内容:<br><img src="http://upload-images.jianshu.io/upload_images/9692973-04d5c87e922d4e74.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image">  </p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如果你达到一个重要的阶段，并希望永远记住那个特别的提交快照，你可以使用 git tag 给它打上标签。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="版本控制工具" scheme="http://blog.husen.xyz/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Git" scheme="http://blog.husen.xyz/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git分布式版本控制系统的使用六：Git 查看提交历史</title>
+    <link href="http://blog.husen.xyz/2018/01/20/Git%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E5%85%AD%EF%BC%9AGit-%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2/"/>
+    <id>http://blog.husen.xyz/2018/01/20/Git分布式版本控制系统的使用六：Git-查看提交历史/</id>
+    <published>2018-01-20T09:52:30.000Z</published>
+    <updated>2018-01-20T09:53:13.458Z</updated>
+    
+    <content type="html"><![CDATA[<p>参考菜鸟教程  <a href="http://www.runoob.com/git/git-commit-history.html" target="_blank" rel="noopener">http://www.runoob.com/git/git-commit-history.html</a><br><a id="more"></a>  </p><h3 id="一、git-log"><a href="#一、git-log" class="headerlink" title="一、git log"></a>一、git log</h3><p>在使用 Git 提交了若干更新之后，又或者克隆了某个项目，想回顾下提交历史，我们可以使用 git log 命令查看。<br>针对我们前一章节的操作，使用 git log 命令列出历史提交记录如下：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-04d575ed4b93f5f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image">  </p><h3 id="二、–oneline"><a href="#二、–oneline" class="headerlink" title="二、–oneline"></a>二、–oneline</h3><p>我们可以用 –oneline 选项来查看历史记录的简洁的版本。<br><img src="http://upload-images.jianshu.io/upload_images/9692973-c9e8ea5804c8be4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>这告诉我们的是，此项目的开发历史。<br>我们还可以用 –graph 选项，查看历史中什么时候出现了分支、合并。以下为相同的命令，开启了拓扑图选项。  </p><h3 id="三、–oneline-–graph"><a href="#三、–oneline-–graph" class="headerlink" title="三、–oneline –graph"></a>三、–oneline –graph</h3><p><img src="http://upload-images.jianshu.io/upload_images/9692973-f961100997641fd8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>现在我们可以更清楚明了地看到何时工作分叉、又何时归并。  </p><h3 id="四、–reverse"><a href="#四、–reverse" class="headerlink" title="四、–reverse"></a>四、–reverse</h3><p>你也可以用 ‘–reverse’参数来逆向显示所有日志。<br><img src="http://upload-images.jianshu.io/upload_images/9692973-f9c88c3b582c82c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image">  </p><h3 id="五、git-log-–author"><a href="#五、git-log-–author" class="headerlink" title="五、git log –author"></a>五、git log –author</h3><p>如果只想查找指定用户的提交日志可以使用命令：git log –author , 例如，比方说我们要找 Git 源码中 issenhu 提交的部分：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-8b4cc4abf6224f25.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image">  </p><h3 id="六、–since-和-–before、–until-和-–after"><a href="#六、–since-和-–before、–until-和-–after" class="headerlink" title="六、–since 和 –before、–until 和 –after"></a>六、–since 和 –before、–until 和 –after</h3><p>如果你要指定日期，可以执行几个选项：–since 和 –before，但是你也可以用 –until 和 –after。<br>例如，如果我要看 Git 项目中三周前且在四月十八日之后的所有提交，我可以执行这个（我还用了 –no-merges 选项以隐藏合并提交）：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-7f65a638301338fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;参考菜鸟教程  &lt;a href=&quot;http://www.runoob.com/git/git-commit-history.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.runoob.com/git/git-commit-history.html&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="版本控制工具" scheme="http://blog.husen.xyz/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Git" scheme="http://blog.husen.xyz/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git分布式版本控制系统的使用五：Git 分支管理</title>
+    <link href="http://blog.husen.xyz/2018/01/20/Git%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BA%94%EF%BC%9AGit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/"/>
+    <id>http://blog.husen.xyz/2018/01/20/Git分布式版本控制系统的使用五：Git-分支管理/</id>
+    <published>2018-01-20T09:50:59.000Z</published>
+    <updated>2018-01-20T09:52:08.439Z</updated>
+    
+    <content type="html"><![CDATA[<p>参考菜鸟教程  <a href="http://www.runoob.com/git/git-branch.html" target="_blank" rel="noopener">http://www.runoob.com/git/git-branch.html</a><br>几乎每一种版本控制系统都以某种形式支持分支。使用分支意味着你可以从开发主线上分离开来，然后在不影响主线的同时继续工作。<br>有人把 Git 的分支模型称为”必杀技特性”，而正是因为它，将 Git 从版本控制系统家族里区分出来。<br><a id="more"></a><br>创建分支命令：  </p><blockquote><p>git branch (branchname)  </p></blockquote><p>切换分支命令:  </p><blockquote><p>git checkout (branchname)  </p></blockquote><p>当你切换分支的时候，Git 会用该分支的最后提交的快照替换你的工作目录的内容， 所以多个分支不需要多个目录。<br>合并分支命令:  </p><blockquote><p>git merge   </p></blockquote><p>你可以多次合并到统一分支， 也可以选择在合并之后直接删除被并入的分支。  </p><h3 id="一、列出分支"><a href="#一、列出分支" class="headerlink" title="一、列出分支"></a>一、列出分支</h3><p>列出分支基本命令：  </p><blockquote><p>git branch  </p></blockquote><p>没有参数时，git branch 会列出你在本地的分支。<br><img src="http://upload-images.jianshu.io/upload_images/9692973-a6692e630438afdc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>此例的意思就是，我们有一个叫做”master”的分支，并且该分支是当前分支。<br>当你执行 git init 的时候，缺省情况下 Git 就会为你创建”master”分支。<br>如果我们要手动创建一个分支。执行 <strong>git branch (branchname)</strong> 即可。<br><img src="http://upload-images.jianshu.io/upload_images/9692973-b3de9c1c083aa960.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>现在我们可以看到，有了一个新分支 mytest。<br>当你以此方式在上次提交更新之后创建了新分支，如果后来又有更新提交， 然后又切换到了”testing”分支，Git 将还原你的工作目录到你创建分支时候的样子<br>接下来我们将演示如何切换分支，我们用 <strong>git checkout (branch)</strong> 切换到我们要修改的分支。<br><img src="http://upload-images.jianshu.io/upload_images/9692973-f5fe0b9433f1e13b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>当我们切换到”testing”分支的时候，我们添加的新文件test.txt被移除了, 原来被删除的文件hello.jsp文件又出现了。切换回”master”分支的时候，它们有重新出现了。<br><img src="当我们切换到&quot;testing&quot;分支的时候，我们添加的新文件test.txt被移除了, 原来被删除的文件hello.php文件又出现了。切换回&quot;master&quot;分支的时候，它们有重新出现了。" alt="image"><br>我们也可以使用 <strong>git checkout -b (branchname)</strong> 命令来创建新分支并立即切换到该分支下，从而在该分支中操作。<br><img src="http://upload-images.jianshu.io/upload_images/9692973-ee8f2dd04d5e208e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>如你所见，我们创建了一个分支，在该分支的上下文中移除了一些文件，然后切换回我们的主分支，那些文件又回来了。<br>使用分支将工作切分开来，从而让我们能够在不同上下文中做事，并来回切换。  </p><h3 id="二、删除分支"><a href="#二、删除分支" class="headerlink" title="二、删除分支"></a>二、删除分支</h3><p>删除分支命令：  </p><blockquote><p>git branch -d (branchname)<br>例如我们要删除”newtest”分支：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-6bf6a4f5ac030c9c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image">  </p><h3 id="三、分支合并"><a href="#三、分支合并" class="headerlink" title="三、分支合并"></a>三、分支合并</h3><p>一旦某分支有了独立内容，你终究会希望将它合并回到你的主分支。 你可以使用以下命令将任何分支合并到当前分支中去，要提交：<br>git merge  </p></blockquote><p><img src="http://upload-images.jianshu.io/upload_images/9692973-afd63c89afecaa70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image">  </p><h3 id="四、合并冲突"><a href="#四、合并冲突" class="headerlink" title="四、合并冲突"></a>四、合并冲突</h3><p>合并并不仅仅是简单的文件添加、移除的操作，Git 也会合并修改。<br><img src="http://upload-images.jianshu.io/upload_images/9692973-9888ddd72d45d4d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>首先，我们创建一个叫做”change_site”的分支，切换过去，我们将内容改为 www.husen.com<br><img src="http://upload-images.jianshu.io/upload_images/9692973-32762bc5e5cadb58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>将修改的内容提交到 “change_site” 分支中。 现在，假如切换回 “master” 分支我们可以看内容恢复到我们修改前的，我们再次修改test.txt文件。<br><img src="http://upload-images.jianshu.io/upload_images/9692973-5308c2816fa9ce01.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>现在这些改变已经记录到我的 “master” 分支了。接下来我们将 “change_site” 分支合并过来。<br><img src="http://upload-images.jianshu.io/upload_images/9692973-d54cd701d33f12c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>我们将前一个分支合并到 “master” 分支，一个合并冲突就出现了，接下来我们需要手动去修改它。<br><img src="http://upload-images.jianshu.io/upload_images/9692973-a746ba03f3159e13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>在 Git 中，我们可以用 git add 要告诉 Git 文件冲突已经解决<br><img src="http://upload-images.jianshu.io/upload_images/9692973-6346444026bd1515.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>现在我们成功解决了合并中的冲突，并提交了结果。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;参考菜鸟教程  &lt;a href=&quot;http://www.runoob.com/git/git-branch.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.runoob.com/git/git-branch.html&lt;/a&gt;&lt;br&gt;几乎每一种版本控制系统都以某种形式支持分支。使用分支意味着你可以从开发主线上分离开来，然后在不影响主线的同时继续工作。&lt;br&gt;有人把 Git 的分支模型称为”必杀技特性”，而正是因为它，将 Git 从版本控制系统家族里区分出来。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="版本控制工具" scheme="http://blog.husen.xyz/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Git" scheme="http://blog.husen.xyz/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git分布式版本控制系统的使用四：Git 基本操作</title>
+    <link href="http://blog.husen.xyz/2018/01/20/Git%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9B%9B%EF%BC%9AGit-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
+    <id>http://blog.husen.xyz/2018/01/20/Git分布式版本控制系统的使用四：Git-基本操作/</id>
+    <published>2018-01-20T09:49:12.000Z</published>
+    <updated>2018-01-20T09:50:46.407Z</updated>
+    
+    <content type="html"><![CDATA[<p>参考菜鸟教程  <a href="http://www.runoob.com/git/git-basic-operations.html" target="_blank" rel="noopener">http://www.runoob.com/git/git-basic-operations.html</a><br>Git 的工作就是创建和保存你项目的快照及与之后的快照进行对比。本章将对有关创建与提交你的项目快照的命令作介绍。<br><a id="more"></a>  </p><h3 id="一、获取与创建项目命令"><a href="#一、获取与创建项目命令" class="headerlink" title="一、获取与创建项目命令"></a>一、获取与创建项目命令</h3><p><strong>git init、git clone</strong>上篇已经讲过了  </p><h3 id="二、基本快照"><a href="#二、基本快照" class="headerlink" title="二、基本快照"></a>二、基本快照</h3><p>Git 的工作就是创建和保存你的项目的快照及与之后的快照进行对比。本章将对有关创建与提交你的项目的快照的命令作介绍。  </p><h4 id="（1）git-add"><a href="#（1）git-add" class="headerlink" title="（1）git add"></a>（1）git add</h4><p>git add 命令可将该文件添加到缓存，如我们添加以下两个文件。<br>git status 命令用于查看项目的当前状态：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-8e82fc39e60a399a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>接下来我们执行 git add 命令来添加文件：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-2dd9e736d8c9f5ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>新项目中，添加所有文件很普遍，我们可以使用 git add . 命令来添加当前项目的所有文件。<br>现在我们修改 README 文件：<br>在README中添加”测试”，保存后执行<strong>git status -s</strong><br><img src="http://upload-images.jianshu.io/upload_images/9692973-04a2b50bf4fc2013.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>“AM” 状态的意思是，这个文件在我们将它添加到缓存之后又有改动。改动后我们在执行 git add 命令将其添加到缓存中：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-f857f460e9e6fd4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>当你要将你的修改包含在即将提交的快照里的时候，需要执行 git add。  </p><h4 id="（2）git-status"><a href="#（2）git-status" class="headerlink" title="（2）git status"></a>（2）git status</h4><p>git status 以查看在你上次提交之后是否有修改。<br>我演示该命令的时候加了 -s 参数，以获得简短的结果输出。如果没加该参数会详细输出内容：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-6bf5dac7a9fb0a88.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image">  </p><h4 id="（3）git-diff"><a href="#（3）git-diff" class="headerlink" title="（3）git diff"></a>（3）git diff</h4><p>执行 git diff 来查看执行 git status 的结果的详细信息。<br>git diff 命令显示已写入缓存与已修改但尚未写入缓存的改动的区别。git diff 有两个主要的应用场景。  </p><blockquote><ul><li>尚未缓存的改动：<strong>git diff</strong>  </li><li>查看已缓存的改动： <strong>git diff –cached</strong>  </li><li>查看已缓存的与未缓存的所有改动：<strong>git diff HEAD</strong>  </li><li>显示摘要而非整个 diff：<strong>git diff –stat</strong>  </li></ul></blockquote><p>在hello.jsp中输入以下内容：  </p><blockquote><p><a href="%response.sendRedirect(&quot;http://www.baidu.com&quot;)%">%response.sendRedirect(&quot;http://www.baidu.com&quot;)%</a>  </p></blockquote><p><img src="http://upload-images.jianshu.io/upload_images/9692973-a34af828cf395667.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>git status 显示你上次提交更新后的更改或者写入缓存的改动， 而 git diff 一行一行地显示这些改动具体是啥。<br>接下来我们来查看下 git diff –cached 的执行效果：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-7bfabcf9517b75c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image">  </p><h4 id="（4）git-commit"><a href="#（4）git-commit" class="headerlink" title="（4）git commit"></a>（4）git commit</h4><p>使用 git add 命令将想要快照的内容写入缓存区， 而执行 git commit 将缓存区内容添加到仓库中。<br>Git 为你的每一个提交都记录你的名字与电子邮箱地址，所以第一步需要配置用户名和邮箱地址。<br><strong>这里我们在第一章的时候已经配过了</strong><br>接下来我们写入缓存，并提交对 hello.jsp 的所有改动。在首个例子中，我们使用 -m 选项以在命令行中提供提交注释。<br><img src="http://upload-images.jianshu.io/upload_images/9692973-284211c085eba6c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>现在我们已经记录了快照。如果我们再执行 <strong>git status</strong>:<br><img src="http://upload-images.jianshu.io/upload_images/9692973-cfee4f781c1e1ca4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>以上输出说明我们在最近一次提交之后，没有做任何改动，是一个”working directory clean：干净的工作目录”。<br>如果你没有设置 -m 选项，Git 会尝试为你打开一个编辑器以填写提交信息。 如果 Git 在你对它的配置中找不到相关信息，默认会打开 vim。屏幕会像这样：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-0e6ad34be152cde1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>如果你觉得 git add 提交缓存的流程太过繁琐，Git 也允许你用 -a 选项跳过这一步。命令格式如下：  </p><blockquote><p>git commit -a  </p></blockquote><p>我们先修改 hello.jsp 文件为以下内容：  </p><blockquote><p><a href="%response.sendRedirect(&quot;http://www.baidu.com&quot;)%">%response.sendRedirect(&quot;http://www.baidu.com&quot;)%</a><br><a href="%response.sendRedirect(&quot;http://www.baidu.com&quot;)%">%response.sendRedirect(&quot;http://www.baidu.com&quot;)%</a>  </p></blockquote><p>再执行以下命令：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-1a552ecb2bfd38dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image">  </p><h4 id="（5）git-reset-HEAD"><a href="#（5）git-reset-HEAD" class="headerlink" title="（5）git reset HEAD"></a>（5）git reset HEAD</h4><p>git reset HEAD 命令用于取消已缓存的内容。<br>我们先改动文件 README 文件，内容如下：  </p><blockquote><p>#测试  </p><p>#test  </p></blockquote><p>hello.jsp 文件修改为：  </p><blockquote><p><a href="%response.sendRedirect(&quot;http://www.baidu.com&quot;)%">%response.sendRedirect(&quot;http://www.baidu.com&quot;)%</a><br><a href="%response.sendRedirect(&quot;http://www.baidu.com&quot;)%">%response.sendRedirect(&quot;http://www.baidu.com&quot;)%</a><br><a href="%response.sendRedirect(&quot;http://www.baidu.com&quot;)%">%response.sendRedirect(&quot;http://www.baidu.com&quot;)%</a>  </p></blockquote><p>现在两个文件修改后，都提交到了缓存区，我们现在要取消其中一个的缓存，操作如下：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-121d63932349f456.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>现在你执行 git commit，只会将 README 文件的改动提交，而 hello.jsp 是没有的。<br><img src="http://upload-images.jianshu.io/upload_images/9692973-e8096d5de8a7c26b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>可以看到 hello.jsp 文件的修改并未提交。<br>这时我们可以使用以下命令将 hello.php 的修改提交：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-2387b783ef51deee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>简而言之，执行 <strong>git reset HEAD</strong> 以取消之前 git add 添加，但不希望包含在下一提交快照中的缓存。  </p><h4 id="（6）git-rm"><a href="#（6）git-rm" class="headerlink" title="（6）git rm"></a>（6）git rm</h4><p>如果只是简单地从工作目录中手工删除文件，运行 git status 时就会在 Changes not staged for commit 的提示。<br>要从 Git 中移除某个文件，就必须要从已跟踪文件清单中移除，然后提交。可以用以下命令完成此项工作  </p><blockquote><p>git rm <file>  </file></p></blockquote><p>如果删除之前修改过并且已经放到暂存区域的话，则必须要用强制删除选项 -f  </p><blockquote><p>git rm -f <file>  </file></p></blockquote><p>如果把文件从暂存区域移除，但仍然希望保留在当前工作目录中，换句话说，仅是从跟踪清单中删除，使用 –cached 选项即可  </p><blockquote><p>git rm –cached <file>  </file></p></blockquote><p>如我们删除 hello.jsp文件：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-311c7436a6ae489c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>不从工作区中删除文件：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-bbcf4681a5c11e2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>可以递归删除，即如果后面跟的是一个目录做为参数，则会递归删除整个目录中的所有子目录和文件：  </p><blockquote><p>git rm –r *   </p></blockquote><p>进入某个目录中，执行此语句，会删除该目录下的所有文件和子目录。  </p><h4 id="（7）git-mv"><a href="#（7）git-mv" class="headerlink" title="（7）git mv"></a>（7）git mv</h4><p>git mv 命令用于移动或重命名一个文件、目录、软连接。<br>我们先把刚移除的 README 添加回来：  </p><blockquote><p>git add README  </p></blockquote><p>然后对其重名:  </p><blockquote><p>git mv README  README.md  </p></blockquote><p><img src="http://upload-images.jianshu.io/upload_images/9692973-7ea678d93716881f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;参考菜鸟教程  &lt;a href=&quot;http://www.runoob.com/git/git-basic-operations.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.runoob.com/git/git-basic-operations.html&lt;/a&gt;&lt;br&gt;Git 的工作就是创建和保存你项目的快照及与之后的快照进行对比。本章将对有关创建与提交你的项目快照的命令作介绍。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="版本控制工具" scheme="http://blog.husen.xyz/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Git" scheme="http://blog.husen.xyz/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git分布式版本控制系统的使用二：Git 工作流程、工作区、暂存区和版本库</title>
+    <link href="http://blog.husen.xyz/2018/01/20/Git%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BA%8C%EF%BC%9AGit-%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E3%80%81%E5%B7%A5%E4%BD%9C%E5%8C%BA%E3%80%81%E6%9A%82%E5%AD%98%E5%8C%BA%E5%92%8C%E7%89%88%E6%9C%AC%E5%BA%93/"/>
+    <id>http://blog.husen.xyz/2018/01/20/Git分布式版本控制系统的使用二：Git-工作流程、工作区、暂存区和版本库/</id>
+    <published>2018-01-20T09:42:23.000Z</published>
+    <updated>2018-01-20T09:48:58.456Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="一、Git-工作流程"><a href="#一、Git-工作流程" class="headerlink" title="一、Git 工作流程"></a>一、Git 工作流程</h3><p>参考菜鸟教程  <a href="http://www.runoob.com/git/git-workflow.html" target="_blank" rel="noopener">http://www.runoob.com/git/git-workflow.html</a><br>一般的工作流程如下：  </p><blockquote><ol><li>克隆 Git 资源作为工作目录。  </li><li>在克隆的资源上添加或修改文件。</li><li>如果其他人修改了，你可以更新资源。</li><li>在提交前查看修改。</li><li>提交修改。  </li><li>在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。<a id="more"></a>  <h4 id="下图展示了-Git-的工作流程："><a href="#下图展示了-Git-的工作流程：" class="headerlink" title="下图展示了 Git 的工作流程："></a>下图展示了 Git 的工作流程：</h4><img src="http://upload-images.jianshu.io/upload_images/9692973-3cfb5d4ebb2fed80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><h3 id="二、Git-工作区、暂存区和版本库"><a href="#二、Git-工作区、暂存区和版本库" class="headerlink" title="二、Git 工作区、暂存区和版本库"></a>二、Git 工作区、暂存区和版本库</h3>参考菜鸟教程  <a href="http://www.runoob.com/git/git-workspace-index-repo.html" target="_blank" rel="noopener">http://www.runoob.com/git/git-workspace-index-repo.html</a><h3 id="（1）基本概念"><a href="#（1）基本概念" class="headerlink" title="（1）基本概念"></a>（1）基本概念</h3>我们先来理解下Git 工作区、暂存区和版本库概念</li><li><strong>工作区</strong>：就是你在电脑里能看到的目录。</li><li><strong>暂存区</strong>：英文叫stage,或index。一般存放在”.git目录下”下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。</li><li><strong>版本库</strong>：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。<br>下面这个图展示了工作区、版本库中的暂存区和版本库之间的关系：<br><img src="http://www.runoob.com/wp-content/uploads/2015/02/1352126739_7909.jpg" alt="image">  </li></ol><ul><li>图中左侧为工作区，右侧为版本库。在版本库中标记为 “index” 的区域是暂存区（stage, index），标记为 “master” 的是 master 分支所代表的目录树。</li><li>图中我们可以看出此时 “HEAD” 实际是指向 master 分支的一个”游标”。所以图示的命令中出现 HEAD 的地方可以用 master 来替换。</li><li>图中的 objects 标识的区域为 Git 的对象库，实际位于 “.git/objects” 目录下，里面包含了创建的各种对象及内容。</li><li>当对工作区修改（或新增）的文件执行 “git add” 命令时，暂存区的目录树被更新，同时工作区修改（或新增）的文件内容被写入到对象库中的一个新的对象中，而该对象的<br>ID被记录在暂存区的文件索引中。</li></ul></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;一、Git-工作流程&quot;&gt;&lt;a href=&quot;#一、Git-工作流程&quot; class=&quot;headerlink&quot; title=&quot;一、Git 工作流程&quot;&gt;&lt;/a&gt;一、Git 工作流程&lt;/h3&gt;&lt;p&gt;参考菜鸟教程  &lt;a href=&quot;http://www.runoob.com/git/git-workflow.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.runoob.com/git/git-workflow.html&lt;/a&gt;&lt;br&gt;一般的工作流程如下：  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;克隆 Git 资源作为工作目录。  &lt;/li&gt;
+&lt;li&gt;在克隆的资源上添加或修改文件。&lt;/li&gt;
+&lt;li&gt;如果其他人修改了，你可以更新资源。&lt;/li&gt;
+&lt;li&gt;在提交前查看修改。&lt;/li&gt;
+&lt;li&gt;提交修改。  &lt;/li&gt;
+&lt;li&gt;在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。
+    
+    </summary>
+    
+      <category term="版本控制工具" scheme="http://blog.husen.xyz/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Git" scheme="http://blog.husen.xyz/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git分布式版本控制系统的使用三：Git 创建仓库</title>
+    <link href="http://blog.husen.xyz/2018/01/20/Git%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%89%EF%BC%9AGit-%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93/"/>
+    <id>http://blog.husen.xyz/2018/01/20/Git分布式版本控制系统的使用三：Git-创建仓库/</id>
+    <published>2018-01-20T09:41:31.000Z</published>
+    <updated>2018-01-20T09:48:38.082Z</updated>
+    
+    <content type="html"><![CDATA[<p>参考菜鸟教程  <a href="http://www.runoob.com/git/git-create-repository.html" target="_blank" rel="noopener">http://www.runoob.com/git/git-create-repository.html</a><br><a id="more"></a>  </p><h3 id="一、git-init"><a href="#一、git-init" class="headerlink" title="一、git init"></a>一、git init</h3><p>Git 使用 <strong>git init</strong> 命令来初始化一个 Git 仓库，Git 的很多命令都需要在 Git 的仓库中运行，所以 <strong>git init</strong> 是使用 Git 的第一个命令。<br>在执行完成 <strong>git init</strong> 命令后，Git 仓库会生成一个 <strong>.git</strong> 目录，该目录包含了资源的所有元数据，其他的项目目录保持不变（不像 SVN 会在每个子目录生成 .svn 目录，Git 只在仓库的根目录生成 <strong>.git</strong> 目录）。  </p><h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><p>使用当前目录作为Git仓库，我们只需使它初始化。  </p><blockquote><ol><li>在根目录下新建一个gitrepo的文件夹  </li><li>进入新建的文件夹gitrepo执行<strong>git init</strong><br><img src="http://upload-images.jianshu.io/upload_images/9692973-d43276154b70567d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>也可以使用指定的目录作为Git仓库，使用命令：<strong>git init newrepo</strong>  </li></ol></blockquote><p>初始化后，会在 gitrepo 目录下会出现一个名为 .git 的目录，所有 Git 需要的数据和资源都存放在这个目录中。<br>如果当前目录下有几个文件想要纳入版本控制，需要先用 git add 命令告诉 Git 开始对这些文件进行跟踪，然后提交：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-b7ca4628d549523f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image">  </p><h3 id="三、git-clone"><a href="#三、git-clone" class="headerlink" title="三、git clone"></a>三、git clone</h3><p>我们使用 <strong>git clone</strong> 从现有 Git 仓库中拷贝项目（类似 svn checkout）。<br>克隆仓库的命令格式为：  </p><blockquote><p>git clone <repo>  </repo></p></blockquote><p>如果我们需要克隆到指定的目录，可以使用以下命令格式：  </p><blockquote><p>git clone <repo> <directory>  </directory></repo></p></blockquote><h4 id="参数说明："><a href="#参数说明：" class="headerlink" title="参数说明："></a>参数说明：</h4><blockquote><p><strong>repo</strong>:Git 仓库。<br><strong>directory</strong>:本地目录。  </p></blockquote><p>比如，要克隆 Ruby 语言的 Git 代码仓库 Grit，可以用下面的命令：  </p><blockquote><p>git clone git://github.com/schacon/grit.git<br><img src="http://upload-images.jianshu.io/upload_images/9692973-36f1591ebc0c63b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image">  </p></blockquote><p>执行该命令后，会在当前目录下创建一个名为grit的目录，其中包含一个 .git 的目录，用于保存下载下来的所有版本记录。<br>如果要自己定义要新建的项目目录名称，可以在上面的命令末尾指定新的名字：  </p><blockquote><p>git clone git://github.com/schacon/grit.git mygrit<br><img src="http://upload-images.jianshu.io/upload_images/9692973-fa139dd8b690502d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image">  </p></blockquote><h4 id="几种效果等价的git-clone写法："><a href="#几种效果等价的git-clone写法：" class="headerlink" title="几种效果等价的git clone写法："></a>几种效果等价的git clone写法：</h4><blockquote><p>git clone <a href="http://github.com/CosmosHua/locate" target="_blank" rel="noopener">http://github.com/CosmosHua/locate</a> new<br>git clone <a href="http://github.com/CosmosHua/locate.git" target="_blank" rel="noopener">http://github.com/CosmosHua/locate.git</a> new<br>git clone git://github.com/CosmosHua/locate new<br>git clone git://github.com/CosmosHua/locate.git new  </p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;参考菜鸟教程  &lt;a href=&quot;http://www.runoob.com/git/git-create-repository.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.runoob.com/git/git-create-repository.html&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="版本控制工具" scheme="http://blog.husen.xyz/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Git" scheme="http://blog.husen.xyz/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git分布式版本控制系统的使用一：Git安装配置</title>
+    <link href="http://blog.husen.xyz/2018/01/20/Git%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%80%EF%BC%9AGit%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
+    <id>http://blog.husen.xyz/2018/01/20/Git分布式版本控制系统的使用一：Git安装配置/</id>
+    <published>2018-01-20T09:35:12.000Z</published>
+    <updated>2018-01-20T09:58:21.184Z</updated>
+    
+    <content type="html"><![CDATA[<p>参考菜鸟教程  <a href="http://www.runoob.com/git/git-install-setup.html" target="_blank" rel="noopener">http://www.runoob.com/git/git-install-setup.html</a><br><img src="http://www.runoob.com/wp-content/uploads/2015/02/f7246b600c338744a9591cd7530fd9f9d62aa0f8.png" alt="image"><br><a id="more"></a></p><ol><li>Git是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。  </li><li>Git 是 Linus Torvalds为了帮助管理Linux内核开发而开发的一个开放源码的版本控制软件。  </li><li>Git 与常用的版本控制工具CVS,Subversion等不同，它采用了分布式版本库的方式，不必服务器端软件支持。  <h3 id="一、Git-与-SVN-区别"><a href="#一、Git-与-SVN-区别" class="headerlink" title="一、Git 与 SVN 区别"></a>一、Git 与 SVN 区别</h3>GIT不仅仅是个版本控制系统，它也是个内容管理系统(CMS),工作管理系统等。如果你是一个具有使用SVN背景的人，你需要做一定的思想转换，来适应GIT提供的一些概念和特征。Git 与 SVN 区别点：<blockquote><ul><li>1、GIT是分布式的，SVN不是：这是GIT和其它非分布式的版本控制系统，例如SVN，CVS等，最核心的区别。  </li><li>2、GIT把内容按元数据方式存储，而SVN是按文件：所有的资源控制系统都是把文件的元信息隐藏在一个类似.svn,.cvs等的文件夹里。  </li><li>3、GIT 和SVN的分支不同：分支在SVN中一点不特别，就是版本库中的另外的一个目录。  </li><li>4、GIT没有一个全局的版本号，而SVN有：目前为止这是跟SVN相比GIT缺少的最大的一个特征。  </li><li>5、GIT的内容完整性要优于SVN：GIT的内容存储使用的是SHA-1哈希算法。这能确保代码内容的完整性，确保在遇到磁盘故障和网络问题时降低对版本库的破坏。  </li></ul></blockquote></li></ol><h3 id="二、Git快速入门"><a href="#二、Git快速入门" class="headerlink" title="二、Git快速入门"></a>二、Git快速入门</h3><p><a href="http://git-scm.com/docs" target="_blank" rel="noopener">Git 完整命令手册地址</a><br><a href="http://www.runoob.com/manual/github-git-cheat-sheet.pdf" target="_blank" rel="noopener">PDF 版命令手册</a>  </p><h3 id="三、Git安装配置"><a href="#三、Git安装配置" class="headerlink" title="三、Git安装配置"></a>三、Git安装配置</h3><h4 id="1、Linux平台上安装"><a href="#1、Linux平台上安装" class="headerlink" title="1、Linux平台上安装"></a>1、Linux平台上安装</h4><p>Git 的工作需要调用 curl，zlib，openssl，expat，libiconv 等库的代码，所以需要先安装这些依赖工具。<br>在有 yum 的系统上（比如 Fedora）或者有 apt-get 的系统上（比如 Debian 体系），可以用下面的命令安装：<br>各 Linux 系统可以很简单多使用其安装包管理工具进行安装：</p><h5 id="（1）Debian-Ubuntu"><a href="#（1）Debian-Ubuntu" class="headerlink" title="（1）Debian/Ubuntu"></a>（1）Debian/Ubuntu</h5><p>Debian/Ubuntu Git的安装命令为：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-e754b25986fd764e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image">  </p><h5 id="（2）Centos-RedHat"><a href="#（2）Centos-RedHat" class="headerlink" title="（2）Centos/RedHat"></a>（2）Centos/RedHat</h5><p>Centos/RedHat 安装命令为：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-c110821e9bdf77ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image">  </p><h5 id="（3）Windows-平台上安装"><a href="#（3）Windows-平台上安装" class="headerlink" title="（3）Windows 平台上安装"></a>（3）Windows 平台上安装</h5><p>在 Windows 平台上安装 Git 同样轻松，有个叫做 msysGit 的项目提供了安装包，可以到 GitHub 的页面上下载 exe 安装文件并运行：<br><a href="http://msysgit.github.io/" target="_blank" rel="noopener">安装包下载地址</a><br><img src="http://upload-images.jianshu.io/upload_images/9692973-d2a17725e620ddb1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>完成安装之后，就可以使用命令行的 git 工具（已经自带了 ssh 客户端）了，另外还有一个图形界面的 Git 项目管理工具。<br>在开始菜单里找到”Git”-&gt;”Git Bash”，会弹出 Git 命令窗口，你可以在该窗口进行 Git 操作。  </p><h5 id="（4）Git配置"><a href="#（4）Git配置" class="headerlink" title="（4）Git配置"></a>（4）Git配置</h5><p>Git 提供了一个叫做 git config 的工具，专门用来配置或读取相应的工作环境变量。<br>这些环境变量，决定了 Git 在各个环节的具体工作方式和行为。这些变量可以存放在以下三个不同的地方：  </p><ol><li>/etc/gitconfig 文件：系统中对所有用户都普遍适用的配置。若使用 git config 时用 –system 选项，读写的就是这个文件。  </li><li>~/.gitconfig 文件：用户目录下的配置文件只适用于该用户。若使用 git config 时用 –global 选项，读写的就是这个文件。</li><li>当前项目的 Git 目录中的配置文件（也就是工作目录中的 .git/config 文件）：这里的配置仅仅针对当前项目有效。每一个级别的配置都会覆盖上层的相同配置，所以 .git/config 里的配置会覆盖 /etc/gitconfig 中的同名变量。  </li></ol><p>在 Windows 系统上，Git 会找寻用户主目录下的 .gitconfig 文件。主目录即 $HOME 变量指定的目录，一般都是 C:\Documents and Settings\$USER。<br>此外，Git 还会尝试找寻 /etc/gitconfig 文件，只不过看当初 Git 装在什么目录，就以此作为根目录来定位。  </p><h5 id="（5）用户信息"><a href="#（5）用户信息" class="headerlink" title="（5）用户信息"></a>（5）用户信息</h5><p>配置个人的用户名称和电子邮件地址：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-42454de73e2f6d64.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>如果用了 <strong>–global</strong> 选项，那么更改的配置文件就是位于你用户主目录下的那个，以后你所有的项目都会默认使用这里配置的用户信息。<br>如果要在某个特定的项目中使用其他名字或者电邮，只要去掉 –global 选项重新配置即可，新的设定保存在当前项目的 .git/config 文件里。  </p><h5 id="（6）文本编辑器"><a href="#（6）文本编辑器" class="headerlink" title="（6）文本编辑器"></a>（6）文本编辑器</h5><p>设置Git默认使用的文本编辑器, 一般可能会是 Vi 或者 Vim。如果你有其他偏好，比如 Emacs 的话，可以重新设置：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-75e0004156348c3a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image">  </p><h5 id="（7）差异分析工具"><a href="#（7）差异分析工具" class="headerlink" title="（7）差异分析工具"></a>（7）差异分析工具</h5><p>还有一个比较常用的是，在解决合并冲突时使用哪种差异分析工具。比如要改用 vimdiff 的话：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-50c0a4b260a8a72e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>Git 可以理解 kdiff3，tkdiff，meld，xxdiff，emerge，vimdiff，gvimdiff，ecmerge，和 opendiff 等合并工具的输出信息。<br>当然，你也可以指定使用自己开发的工具，具体怎么做可以参阅第七章。  </p><h5 id="（8）查看配置信息"><a href="#（8）查看配置信息" class="headerlink" title="（8）查看配置信息"></a>（8）查看配置信息</h5><p>要检查已有的配置信息，可以使用 git config –list 命令：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-5387ebf479d3a28a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>有时候会看到重复的变量名，那就说明它们来自不同的配置文件（比如 <strong>/etc/gitconfig</strong> 和 <strong>~/.gitconfig</strong>），不过最终 Git 实际采用的是最后一个。<br>这些配置我们也可以在 <strong>~/.gitconfig</strong> 或 <strong>/etc/gitconfig</strong> 看到，如下所示：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-5f8db0db82bc7fb5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br><img src="http://upload-images.jianshu.io/upload_images/9692973-6f5738536fdc3642.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>也可以直接查阅某个环境变量的设定，只要把特定的名字跟在后面即可，像这样：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-6266a023540570ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;参考菜鸟教程  &lt;a href=&quot;http://www.runoob.com/git/git-install-setup.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.runoob.com/git/git-install-setup.html&lt;/a&gt;&lt;br&gt;&lt;img src=&quot;http://www.runoob.com/wp-content/uploads/2015/02/f7246b600c338744a9591cd7530fd9f9d62aa0f8.png&quot; alt=&quot;image&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="版本控制工具" scheme="http://blog.husen.xyz/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Git" scheme="http://blog.husen.xyz/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>HTTP学习笔记二</title>

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Git," />
 
 
 
@@ -81,16 +81,25 @@
 
 
 
-<meta name="description" content="在昏暗的暮色中 两人的身影逐渐淡漠 尽管如此 ——但是我们已回不到从前">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Husen&#39;Blog">
-<meta property="og:url" content="http://blog.husen.xyz/archives/2018/01/index.html">
+<meta name="description" content="参考菜鸟教程  http://www.runoob.com/git/git-commit-history.html">
+<meta name="keywords" content="Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git分布式版本控制系统的使用六：Git 查看提交历史">
+<meta property="og:url" content="http://blog.husen.xyz/2018/01/20/Git分布式版本控制系统的使用六：Git-查看提交历史/index.html">
 <meta property="og:site_name" content="Husen&#39;Blog">
-<meta property="og:description" content="在昏暗的暮色中 两人的身影逐渐淡漠 尽管如此 ——但是我们已回不到从前">
+<meta property="og:description" content="参考菜鸟教程  http://www.runoob.com/git/git-commit-history.html">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9692973-04d575ed4b93f5f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9692973-c9e8ea5804c8be4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9692973-f961100997641fd8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9692973-f9c88c3b582c82c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9692973-8b4cc4abf6224f25.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9692973-7f65a638301338fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-01-20T09:53:13.458Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Husen&#39;Blog">
-<meta name="twitter:description" content="在昏暗的暮色中 两人的身影逐渐淡漠 尽管如此 ——但是我们已回不到从前">
+<meta name="twitter:title" content="Git分布式版本控制系统的使用六：Git 查看提交历史">
+<meta name="twitter:description" content="参考菜鸟教程  http://www.runoob.com/git/git-commit-history.html">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/9692973-04d575ed4b93f5f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -120,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.husen.xyz/archives/2018/01/"/>
+  <link rel="canonical" href="http://blog.husen.xyz/2018/01/20/Git分布式版本控制系统的使用六：Git-查看提交历史/"/>
 
 
 
 
 
-  <title>归档 | Husen'Blog</title>
+  <title>Git分布式版本控制系统的使用六：Git 查看提交历史 | Husen'Blog</title>
   
 
 
@@ -158,7 +167,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	<a href="https://github.com/issenhu" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#FD6C6C; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -306,407 +315,240 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.husen.xyz/2018/01/20/Git分布式版本控制系统的使用六：Git-查看提交历史/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="可爱的小森森^_^">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/blog_head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Husen'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">Git分布式版本控制系统的使用六：Git 查看提交历史</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-20T17:52:30+08:00">
+                2018-01-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 11 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/版本控制工具/" itemprop="url" rel="index">
+                    <span itemprop="name">版本控制工具</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
+             <span id="/2018/01/20/Git分布式版本控制系统的使用六：Git-查看提交历史/" class="leancloud_visitors" data-flag-title="Git分布式版本控制系统的使用六：Git 查看提交历史">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/20/Git分布式版本控制系统的使用七：Git-标签/" itemprop="url">
-              
-                <span itemprop="name">Git分布式版本控制系统的使用七：Git 标签</span>
-              
-            </a>
-        
-      </h2>
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-20T17:53:34+08:00"
-              content="2018-01-20" >
-          01-20
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/20/Git分布式版本控制系统的使用六：Git-查看提交历史/" itemprop="url">
-              
-                <span itemprop="name">Git分布式版本控制系统的使用六：Git 查看提交历史</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-20T17:52:30+08:00"
-              content="2018-01-20" >
-          01-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/20/Git分布式版本控制系统的使用五：Git-分支管理/" itemprop="url">
-              
-                <span itemprop="name">Git分布式版本控制系统的使用五：Git 分支管理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-20T17:50:59+08:00"
-              content="2018-01-20" >
-          01-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/20/Git分布式版本控制系统的使用四：Git-基本操作/" itemprop="url">
-              
-                <span itemprop="name">Git分布式版本控制系统的使用四：Git 基本操作</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-20T17:49:12+08:00"
-              content="2018-01-20" >
-          01-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>参考菜鸟教程  <a href="http://www.runoob.com/git/git-commit-history.html" target="_blank" rel="noopener">http://www.runoob.com/git/git-commit-history.html</a><br><a id="more"></a>  </p>
+<h3 id="一、git-log"><a href="#一、git-log" class="headerlink" title="一、git log"></a>一、git log</h3><p>在使用 Git 提交了若干更新之后，又或者克隆了某个项目，想回顾下提交历史，我们可以使用 git log 命令查看。<br>针对我们前一章节的操作，使用 git log 命令列出历史提交记录如下：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-04d575ed4b93f5f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image">  </p>
+<h3 id="二、–oneline"><a href="#二、–oneline" class="headerlink" title="二、–oneline"></a>二、–oneline</h3><p>我们可以用 –oneline 选项来查看历史记录的简洁的版本。<br><img src="http://upload-images.jianshu.io/upload_images/9692973-c9e8ea5804c8be4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>这告诉我们的是，此项目的开发历史。<br>我们还可以用 –graph 选项，查看历史中什么时候出现了分支、合并。以下为相同的命令，开启了拓扑图选项。  </p>
+<h3 id="三、–oneline-–graph"><a href="#三、–oneline-–graph" class="headerlink" title="三、–oneline –graph"></a>三、–oneline –graph</h3><p><img src="http://upload-images.jianshu.io/upload_images/9692973-f961100997641fd8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br>现在我们可以更清楚明了地看到何时工作分叉、又何时归并。  </p>
+<h3 id="四、–reverse"><a href="#四、–reverse" class="headerlink" title="四、–reverse"></a>四、–reverse</h3><p>你也可以用 ‘–reverse’参数来逆向显示所有日志。<br><img src="http://upload-images.jianshu.io/upload_images/9692973-f9c88c3b582c82c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image">  </p>
+<h3 id="五、git-log-–author"><a href="#五、git-log-–author" class="headerlink" title="五、git log –author"></a>五、git log –author</h3><p>如果只想查找指定用户的提交日志可以使用命令：git log –author , 例如，比方说我们要找 Git 源码中 issenhu 提交的部分：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-8b4cc4abf6224f25.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image">  </p>
+<h3 id="六、–since-和-–before、–until-和-–after"><a href="#六、–since-和-–before、–until-和-–after" class="headerlink" title="六、–since 和 –before、–until 和 –after"></a>六、–since 和 –before、–until 和 –after</h3><p>如果你要指定日期，可以执行几个选项：–since 和 –before，但是你也可以用 –until 和 –after。<br>例如，如果我要看 Git 项目中三周前且在四月十八日之后的所有提交，我可以执行这个（我还用了 –no-merges 选项以隐藏合并提交）：<br><img src="http://upload-images.jianshu.io/upload_images/9692973-7f65a638301338fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/20/Git分布式版本控制系统的使用二：Git-工作流程、工作区、暂存区和版本库/" itemprop="url">
-              
-                <span itemprop="name">Git分布式版本控制系统的使用二：Git 工作流程、工作区、暂存区和版本库</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-20T17:42:23+08:00"
-              content="2018-01-20" >
-          01-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/20/Git分布式版本控制系统的使用三：Git-创建仓库/" itemprop="url">
-              
-                <span itemprop="name">Git分布式版本控制系统的使用三：Git 创建仓库</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-20T17:41:31+08:00"
-              content="2018-01-20" >
-          01-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/20/Git分布式版本控制系统的使用一：Git安装配置/" itemprop="url">
-              
-                <span itemprop="name">Git分布式版本控制系统的使用一：Git安装配置</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-20T17:35:12+08:00"
-              content="2018-01-20" >
-          01-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/10/HTTP学习笔记二/" itemprop="url">
-              
-                <span itemprop="name">HTTP学习笔记二</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-10T17:29:49+08:00"
-              content="2018-01-10" >
-          01-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/09/HTTP概述/" itemprop="url">
-              
-                <span itemprop="name">HTTP概述</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-09T17:09:54+08:00"
-              content="2018-01-09" >
-          01-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/03/RabbitMQ消息队列（一）-Detailed-Introduction-详细介绍/" itemprop="url">
-              
-                <span itemprop="name">RabbitMQ消息队列（一）:Detailed Introduction 详细介绍</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-03T22:15:57+08:00"
-              content="2018-01-03" >
-          01-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------本文结束<i class="fa fa-paw"></i>感谢阅读------</div>
+    
+</div>
+
+      
+    </div>		 
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>我知道你们是不会鼓励我的，但是心中总有个大胆的想法！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/weixin.JPG" alt="可爱的小森森^_^ 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/zhifubao.JPG" alt="可爱的小森森^_^ 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Git/" rel="tag"># Git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/20/Git分布式版本控制系统的使用五：Git-分支管理/" rel="next" title="Git分布式版本控制系统的使用五：Git 分支管理">
+                <i class="fa fa-chevron-left"></i> Git分布式版本控制系统的使用五：Git 分支管理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/20/Git分布式版本控制系统的使用七：Git-标签/" rel="prev" title="Git分布式版本控制系统的使用七：Git 标签">
+                Git分布式版本控制系统的使用七：Git 标签 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -714,6 +556,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -734,8 +580,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -868,6 +723,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、git-log"><span class="nav-number">1.</span> <span class="nav-text">一、git log</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、–oneline"><span class="nav-number">2.</span> <span class="nav-text">二、–oneline</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、–oneline-–graph"><span class="nav-number">3.</span> <span class="nav-text">三、–oneline –graph</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、–reverse"><span class="nav-number">4.</span> <span class="nav-text">四、–reverse</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、git-log-–author"><span class="nav-number">5.</span> <span class="nav-text">五、git log –author</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、–since-和-–before、–until-和-–after"><span class="nav-number">6.</span> <span class="nav-text">六、–since 和 –before、–until 和 –after</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1037,6 +908,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
